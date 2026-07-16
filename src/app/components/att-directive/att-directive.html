@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-3">
+        <div class="p-3" [ngClass]="div1ClassName()">
+            Div 1 - {{div1ClassName()}}
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3" [ngStyle]="{ 'background-color': isDiv2Green() == true ? 'blue' : 'red' }">
+            Div 2
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="setBgClass('bg-success')">Green</button>
+        <button class="btn btn-danger" (click)="setBgClass('bg-danger')">Red</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="toggleDiv2Color()">Toggle BG Color</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        firstname => {{firstName()}}
+        <br>
+        {{firstName() | uppercase}}
+    </div>
+    <div class="col-3">
+        course => {{courseName()}}
+        <br>
+        {{courseName() | lowercase}}
+    </div>
+    <div class="col-3">
+        course => {{courseName()}}
+        <br>
+        {{courseName() | titlecase}}
+    </div>
+    <div class="col-3">
+        rollNoList => {{rollNoList()}}
+        <br>
+        {{rollNoList() | slice:0:3}}
+        <br>
+        {{rollNoList() | slice:3}}
+    </div>
+    <div class="col-3">
+        studentObject => {{studentObject()}}
+        <br>
+        {{studentObject() | json}}
+    </div>
+    <div class="col-3">
+        current date => {{currentDate()}}
+        <br>
+        {{currentDate() | date}}
+        <br>
+        {{currentDate() | date:"dd-MMM-yy"}}
+        <br>
+        {{currentDate() | date:"dd-MM-yy"}}
+        <br>
+        {{currentDate() | date:"dd MMMM yyyy"}}
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<table>
+    <tr>
+        <td>
+            @if(isParaVisiable === true) {
+            <p>This is Sample Para</p>
+            } @else {
+            <h3>isParaVisiable has False value</h3>
+            }
+        </td>
+        <td>
+            <button class="btn btn-success" (click)="showP()"> Show P</button>
+        </td>
+        <td>
+            <button (click)="hideP()"> Hide P</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @if (startMonthName =='jan') {
+            <span>January</span>
+            } @else if(startMonthName =='feb') {
+            <span>February</span>
+            } @else if(startMonthName =='mar') {
+            <span>March</span>
+            } @else if(startMonthName =='apr') {
+            <span>April</span>
+            } @else {
+            <span>Wrong Input</span>
+            }
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="startMonthName" placeholder="Enter Month Name">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                @for (item of citList; track $index) {
+                <li>{{item}}</li>
+                }
+            </ul>
+        </td>
+        <td>
+            <select name="" id="">
+                @for (item of citList; track $index) {
+                <option value="">{{item}}</option>
+                }
+            </select>
+        </td>
+    </tr>
+</table>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of studentList; track $index) {
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.city}}</td>
+            <td>
+                @if(item.isActive == true) {
+                <h6>Active</h6>
+                } @else {
+                <h6>De-Active</h6>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
