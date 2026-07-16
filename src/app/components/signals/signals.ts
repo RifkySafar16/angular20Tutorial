@@ -19,11 +19,8 @@ export class Signals {
 
   constructor() {
     this.firstName = "Rahul";
-    console.log(this.firstName);
-    console.log(this.courseName())
     setTimeout(() => {
       this.courseName.set("React")
     }, 5000)
-    console.log(this.courseName())
   }
 }
