@@ -1,0 +1,8 @@
+.cableBlueImage{
+    background-image: url("../../../assets/img/cableBlue.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    opacity: 0.75;
+    height: 100vh;
+}

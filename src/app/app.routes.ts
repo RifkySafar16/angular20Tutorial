@@ -7,38 +7,55 @@ import { AttDirective } from './components/att-directive/att-directive';
 import { GetApi } from './components/get-api/get-api';
 import { User } from './components/user/user';
 import { ReactiveUser } from './components/reactive-user/reactive-user';
+import { Login } from './components/login/login';
+import { Navbar } from './components/navbar/navbar';
 
 export const routes: Routes = [
     {
-        path: 'admin', 
-        component: Admin
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',
     },
     {
-        path: 'control-flow-statement', 
-        component: ControlFlow
+        path: 'login',
+        component: Login,
     },
     {
-        path: 'databinding', 
-        component: DataBinding
+        path: '',
+        component: Navbar,
+        children: [
+            {
+                path: 'admin',
+                component: Admin
+            },
+            {
+                path: 'control-flow-statement',
+                component: ControlFlow
+            },
+            {
+                path: 'databinding',
+                component: DataBinding
+            },
+            {
+                path: 'signal',
+                component: Signals
+            },
+            {
+                path: 'Attribute-dir',
+                component: AttDirective
+            },
+            {
+                path: 'get-api',
+                component: GetApi
+            },
+            {
+                path: 'users',
+                component: User
+            },
+            {
+                path: 'reactive-users',
+                component: ReactiveUser
+            }
+        ]
     },
-    {
-        path: 'signal', 
-        component: Signals
-    },
-    {
-        path: 'Attribute-dir', 
-        component: AttDirective
-    },
-    {
-        path: 'get-api', 
-        component: GetApi
-    },
-    {
-        path: 'users', 
-        component: User
-    },
-    {
-        path: 'reactive-users', 
-        component: ReactiveUser
-    }
 ];

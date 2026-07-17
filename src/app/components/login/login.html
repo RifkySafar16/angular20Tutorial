@@ -1,0 +1,36 @@
+<div id="intro" class="bg-image shadow-2-strong cableBlueImage">
+    <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-5 col-md-8">
+                    <form class="bg-white rounded shadow-5-strong p-5" [formGroup]="userForm">
+                        <h2>Login</h2>
+                        <div class="form-outline mb-4">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" formControlName="username"/>
+                            <div class="text-danger">
+                                @if (userForm.controls['username'].errors?.['required'] && userForm.controls['username'].touched) {
+                                <span>Username is required</span>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" formControlName="password"/>
+                            <div class="text-danger">
+                                @if (userForm.controls['password'].errors?.['required'] && userForm.controls['password'].touched) {
+                                <span>Password is required</span>
+                                } @else if (userForm.controls['password'].errors?.['minlength'] && userForm.controls['password'].touched) {
+                                <span>Password must be at least 6 characters long</span>
+                                }
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" [disabled]="!userForm.valid" (click)="onLogin()">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
